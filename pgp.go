@@ -12,7 +12,7 @@ func (pkg *Package) SignArchives() error {
 			continue
 		}
 
-		cmd := exec.Command("gpg", "--detach-sign", "--no-armor", filename)
+		cmd := exec.Command("gpg", "--detach-sign", "--no-armor", "--yes", filename)
 		cmd.Dir = pkg.config.RepoPath
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
