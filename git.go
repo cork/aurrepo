@@ -39,7 +39,7 @@ func (pkg *Package) CheckAURUpdated() bool {
 }
 
 func (pkg *Package) UpdateAURRepo() error {
-	cmd := exec.Command("git", "pull")
+	cmd := exec.Command("git", "reset", "--hard", "@{u}")
 	cmd.Dir = pkg.Path
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr

@@ -29,6 +29,7 @@ func main() {
 		}
 
 		if pkg.CheckAURUpdated() {
+			fmt.Println("")
 			if err := pkg.UpdateAURRepo(); err != nil {
 				panic(err.Error())
 			}
